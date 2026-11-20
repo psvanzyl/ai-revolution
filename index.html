@@ -853,7 +853,7 @@ function sc11(p,lt){ // the balance beam
     const up=[],down=[];
     for (let j=0;j<=32*out;j++){
       const u=j/32;
-      up.push([lerp(WX,1120,u),BY-7-Math.sin(u*Math.PI/2)*180]);
+      up.push([lerp(WX,1075,u),BY-7-Math.sin(u*Math.PI/2)*180]);
       down.push([lerp(WX,900,u),BY-7+u*u*320]);
     }
     line(up,ACC,2.2,.7,[4,6]); line(down,'#ff8a78',2.2,.7,[4,6]);
