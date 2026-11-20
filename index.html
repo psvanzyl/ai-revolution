@@ -429,7 +429,7 @@ const INV=[[-9500,'farming'],[-3200,'writing'],[1450,'printing press'],[1769,'st
 const yrTxt = y => y<0 ? Math.round(-y).toLocaleString('en-US')+' BC' : String(Math.round(y));
 function sc1(p,lt){ // accelerating returns
   bg(); stars(.3);
-  const X0=640, X1=1190, Y0=540, Y1=100;
+  const X0=640, X1=1155, Y0=540, Y1=100;
   const z1=ease(span(p,.34,.5)), z2=ease(span(p,.68,.86));
   const wid = Math.exp(lerp(lerp(Math.log(12026),Math.log(276),z1),Math.log(25),z2)), x0=2026-wid;
   const f = y => 1/(2060-y), f0=f(x0), f1=f(2026);
@@ -458,7 +458,7 @@ function sc1(p,lt){ // accelerating returns
 
 function sc2(p,lt){ // linear intuition vs exponential reality
   bg(); stars(.25);
-  const X0=640,X1=1180,Y0=540,Y1=80,un=.55,k=4.2;
+  const X0=640,X1=1155,Y0=540,Y1=80,un=.55,k=4.2;
   const v = u => (Math.exp(k*u)-1)/(Math.exp(k)-1), Q = u => [lerp(X0,X1,u),lerp(Y0,Y1,v(u))];
   axes(X0,Y0,X1+12,Y1-10);
   text('PROGRESS',X0+8,Y1-12,{size:11,col:DIM});
@@ -608,7 +608,7 @@ function sc5(p,lt){ // Moravec's paradox
 
 function sc6(p,lt){ // compute per $1000
   bg(); stars(.25);
-  const X0=640,X1=1190,Y0=540,Y1=90,ya=1975,yb=2032;
+  const X0=640,X1=1155,Y0=540,Y1=90,ya=1975,yb=2032;
   const X=y=>lerp(X0,X1,(y-ya)/(yb-ya)), Y=l=>lerp(Y0,Y1,l/18), cps=y=>13.6+(y-2015)*.32;
   for (const l of [0,4,8,12,16]){ text('10'+sup(l),X0-10,Y(l)+4,{size:11,col:DIM,align:'right'}); if (l) line([[X0,Y(l)],[X1,Y(l)]],'rgba(242,238,227,.06)',1); }
   for (const y of [1980,2000,2020]) text(String(y),X(y),Y0+22,{size:11,col:DIM,align:'center'});
@@ -791,7 +791,7 @@ function sc9(p,lt){ // the staircase of intelligence
   }
   const top=span(p,.7,.8);
   if (top>0){
-    const x=SX(1130),y=SY(-700)-24*s;
+    const x=SX(1040),y=SY(-700)-24*s;
     glow(x,y,160*s*(1+.08*Math.sin(lt*2)),.8*top,'255,214,140');
     dot(x,y,15*s,'#fff4d6',top);
     tag(x-178,SY(-700)+28,'superintelligence',top,ACC);
@@ -832,8 +832,8 @@ function sc11(p,lt){ // the balance beam
   const BX0=300,BX1=1080,BY=360,WX=1000;
   glow(640,760,560,.35,'150,30,30');
   text('EXTINCTION',900,600,{size:13,col:'rgba(255,140,120,.85)',align:'center'});
-  glow(1120,130,170,.35+.1*Math.sin(lt*1.5),GD); dot(1120,130,4,'#fff4d6');
-  text('IMMORTALITY',1150,104,{size:13,col:ACC,align:'right'});
+  glow(1075,130,170,.35+.1*Math.sin(lt*1.5),GD); dot(1075,130,4,'#fff4d6');
+  text('IMMORTALITY',1105,104,{size:13,col:ACC,align:'right'});
   ctx.globalAlpha=1; ctx.fillStyle='#3a3f55'; ctx.fillRect(BX0-300,BY,BX1-BX0+300,5);
   glow(WX,BY-26,32,.7,CY); line([[WX,BY-52],[WX,BY]],CYAN,2.2);
   tag(WX-22,BY-62,'ASI',1,CYAN);

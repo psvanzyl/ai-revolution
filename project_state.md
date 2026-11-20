@@ -1,18 +1,29 @@
 # ai-revolution — screenplay-style visual essay
 
-Goal: another portfolio piece like tenochtitlan. Screenplay format per
-nenioch.github.io/ai-portfolio/ai-revolution-wait-but-why: one self-contained
-HTML, 16 scenes x 12 s, live canvas drawing, Web Audio synth score, no deps.
+Goal: portfolio piece in the nenioch "screenplay" format (wait-but-why
+ai-revolution page): one self-contained HTML, 16 scenes x 12 s, live canvas,
+Web Audio synth score, no deps, no build step.
 
-## Status (2026-11-20)
-- [x] Reference engine studied (single file, SCENES+draw(p,lt), score event table)
-- [ ] Build original English summary of Tim Urban AI Revolution (own text, own art)
-- [ ] QA: headless chromium screenshots per scene + vision check
-- [ ] Publish: psvanzyl/ai-revolution repo + gh Pages
-- [ ] Coolify: ai-revolution.laserraptorai.duckdns.org (pattern: tenochtitlan)
+## LIVE (2026-11-20)
+- Repo:  https://github.com/psvanzyl/ai-revolution (public, main)
+- Site:  https://ai-revolution.laserraptorai.duckdns.org
+- Coolify app uuid 7uplowa5sxiekuhsmvbzibl1, project uzi10a2aty74qzuoyoczsyvl,
+  dockerfile pack (nginx:1.27-alpine, COPY index.html), port 80, CT310.
+- Redeploy: POST :8000/api/v1/deploy?uuid=... (token ~/.config/coolify.token)
 
-## Decisions
-- Content: own English summary of Wait But Why (2015). NOT a copy of the Dutch
-  nenioch text (their summary is their work).
-- Engine: same architecture, own code. Stage 1280x720 cover-fit.
-- Deploy target per tenochtitlan pattern.
+## Content
+- Own English summary of Tim Urban, The AI Revolution (WBW 2015 + sequel).
+  NOT a copy of nenioch Dutch text; engine architecture learned from it,
+  all code/art/score original.
+- 16 scenes: traveler, accelerating returns, knee, ANI/AGI/ASI, narrow AI,
+  Moravec, compute, three roads, silicon edge, staircase, explosion, beam,
+  when?, camps, Turry, you-are-here. Scene 13 shows today from system clock.
+
+## QA record
+- Headless chromium (?t=<sec>&paused) screenshots of all 16 scenes.
+- Vision-analyzed 8+ frames; 2 fix iterations: chart margins vs text panel,
+  sc3 figure overlap, sc0 flash overexposure, sc9 camera + sun in frame,
+  sc11 branch paths earlier + star. Final check on live URL passed.
+
+## Conventions
+- ponytail plugin active (smallest complete change) since 2026-11-20.
